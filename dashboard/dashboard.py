@@ -9,7 +9,7 @@ st.cache_data.clear()
 sns.set(style='dark')
 
 # Load the dataset
-data = pd.read_csv("/dashboard/all_data.csv")
+data = pd.read_csv("/mount/src/proyek-analisis-data/dashboard/all_data.csv")
 
 # Ensure 'dteday' is a datetime column
 data['dteday'] = pd.to_datetime(data['dteday'])
