@@ -72,8 +72,9 @@ plt.show()
 plt.show()
 
 # Frequent rental weekend and weekday
-data['day_list'] = data['workingday'].map({1: 'Weekday', 0: 'Weekend'})
-weekday_workingday = data.groupby('day_list').agg({
+st.subheader("Trend Rental on Weekend and Weekday")
+filtered_data['day_list'] = data['workingday'].map({1: 'Weekday', 0: 'Weekend'})
+weekday_workingday = filtered_data.groupby('day_list').agg({
     "casual": "sum",
     "registered": "sum",
     "cnt": "sum" 
