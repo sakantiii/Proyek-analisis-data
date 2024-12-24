@@ -4,6 +4,7 @@
 
 #### Masukkan code untuk aplikasi streamlit
 %%writefile dashboard.py
+
 import streamlit as st
 
 #### Jalankan aplikasi streamlit
