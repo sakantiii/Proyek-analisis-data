@@ -1,19 +1,13 @@
-## Streamlit Dashboard with Google collab
-#### Instalasi streamlit di Google Colab
-!pip install streamlit
-
-
-#### Masukkan code untuk aplikasi streamlit
-%%writefile dashboard.py
-
-import streamlit as st
-
-#### Dapatkan IP
-!wget -q -O - ipv4.icanhazip.com
-
-
-#### Jalankan aplikasi streamlit
-!streamlit run dashboard.py & npx localtunnel --port 8501
-
-
-Silakan isi field Endpoint IP dengan External URL lalu Submit
+## Bike rental Dashboard
+## Setup Environment - Anaconda
+conda create --name main-ds python=3.9
+conda activate main-ds
+pip install -r requirements.txt
+## Setup Environment - Shell/Terminal
+mkdir proyek_analisis_data
+cd proyek_analisis_data
+pipenv install
+pipenv shell
+pip install -r requirements.txt
+## Run steamlit app
+streamlit run dashboard.py
