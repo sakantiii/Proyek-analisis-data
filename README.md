@@ -8,6 +8,9 @@
 
 import streamlit as st
 
+#### Dapatkan IP
+!wget -q -O - ipv4.icanhazip.com
+
 
 #### Jalankan aplikasi streamlit
 !streamlit run app.py & npx localtunnel --port 8501
