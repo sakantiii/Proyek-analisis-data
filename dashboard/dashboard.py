@@ -71,21 +71,19 @@ st.pyplot(fig)
 plt.show()
 plt.show()
 
-# Frequent weekend and weekday
-data_df['day_list'] = data_df['workingday'].map({1: 'Weekday', 0: 'Weekend'})
-weekday_workingday = data_df.groupby('day_list').agg({
+# Frequent rental weekend and weekday
+data['day_list'] = data['workingday'].map({1: 'Weekday', 0: 'Weekend'})
+weekday_workingday = filtered_data.groupby('day_list').agg({
     "casual": "sum",
     "registered": "sum",
     "cnt": "sum" 
 }).reset_index()
 
-st.title('Bike Rental Dashboard')
-st.subheader('Total Rental Based on weekend and weekday trend')
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.bar(weekday_workingday['day_list'], weekday_workingday['casual'], color='steelblue', label='Casual')
 ax.bar(weekday_workingday['day_list'], weekday_workingday['registered'], bottom=weekday_workingday['casual'], color='lightblue', label='Registered')
 ax.set_title('Total Rental Based on weekend and weekday trend', fontsize=16)
-ax.set_xlabel('Tipe Hari', fontsize=12)
+ax.set_xlabel('day type', fontsize=12)
 ax.set_ylabel('total count', fontsize=12)
 ax.legend(title='Rental_type')
 st.pyplot(fig)
