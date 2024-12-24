@@ -9,8 +9,7 @@ st.cache_data.clear()
 sns.set(style='dark')
 
 # Load the dataset
-file_path = 'all_data.csv'
-data = pd.read_csv(file_path)
+data = pd.read_csv("all_data.csv")
 
 # Ensure 'dteday' is a datetime column
 data['dteday'] = pd.to_datetime(data['dteday'])
